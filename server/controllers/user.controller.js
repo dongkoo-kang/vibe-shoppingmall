@@ -427,11 +427,27 @@ exports.changePassword = async (req, res) => {
     
     // 새 비밀번호 설정
     user.password = newPassword;
+    
+    // 비밀번호 초기화 관련 memo 필드 제거
+    if (user.memo && (
+      user.memo.includes('비밀번호가 초기화되었습니다') || 
+      user.memo.includes('비밀번호 입력 5회 실패')
+    )) {
+      user.memo = undefined;
+    }
+    
     await user.save();
+    
+    // 업데이트된 사용자 정보 반환 (비밀번호 제외)
+    const userResponse = user.toObject();
+    delete userResponse.password;
     
     res.json({
       success: true,
-      message: '비밀번호가 변경되었습니다.'
+      message: '비밀번호가 변경되었습니다.',
+      data: {
+        user: userResponse
+      }
     });
   } catch (error) {
     if (error.name === 'ValidationError') {

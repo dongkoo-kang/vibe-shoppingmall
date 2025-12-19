@@ -151,13 +151,13 @@ function ChangePassword() {
           confirmPassword: ''
         });
         
-        // 비밀번호 변경 완료 플래그 제거
-        localStorage.removeItem('needsPasswordChange');
-        
         // 사용자 정보 업데이트 (서버에서 업데이트된 사용자 정보를 받아온 경우)
         if (response.data && response.data.user) {
           localStorage.setItem('user', JSON.stringify(response.data.user));
         }
+        
+        // 비밀번호 변경 완료 플래그 제거 (사용자 정보 업데이트 후)
+        localStorage.removeItem('needsPasswordChange');
         
         // 2초 후 홈으로 이동
         setTimeout(() => {
