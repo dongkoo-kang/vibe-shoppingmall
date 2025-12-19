@@ -1,6 +1,7 @@
 const isDevelopment = import.meta.env.DEV;
 
-const PRODUCT_API_URL = 'http://localhost:5000/api/products';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const PRODUCT_API_URL = `${API_BASE_URL}/products`;
 
 const getFetchOptions = (method = 'GET', body = null, auth = false) => {
   const options = {

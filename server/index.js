@@ -23,6 +23,20 @@ app.use(cors({
         'http://localhost:5173',
         'http://localhost:3000'
       ];
+      
+      // Vercel 배포 URL 패턴 지원 (동적 허용)
+      // CLIENT_URL이 설정되어 있으면 해당 URL과 모든 하위 경로 허용
+      if (process.env.CLIENT_URL && origin && origin.startsWith(process.env.CLIENT_URL)) {
+        callback(null, true);
+        return;
+      }
+      
+      // Vercel 기본 도메인 패턴 허용 (*.vercel.app)
+      if (origin && origin.includes('.vercel.app')) {
+        callback(null, true);
+        return;
+      }
+      
       if (allowedOrigins.indexOf(origin) !== -1) {
         callback(null, true);
       } else {
@@ -102,5 +116,16 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`서버가 포트 ${PORT}에서 실행 중입니다.`);
   console.log(`환경: ${process.env.NODE_ENV || 'development'}`);
+}).on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`\n❌ 포트 ${PORT}가 이미 사용 중입니다.`);
+    console.error(`다음 명령어로 포트를 사용 중인 프로세스를 확인하세요:`);
+    console.error(`  Windows: netstat -ano | findstr :${PORT}`);
+    console.error(`  또는 다른 포트를 사용하려면 .env 파일에 PORT=5001 등을 설정하세요.\n`);
+    process.exit(1);
+  } else {
+    console.error('서버 시작 중 오류 발생:', err);
+    process.exit(1);
+  }
 });
 
