@@ -9,7 +9,7 @@
   ],
   "buildpacks": [
     {
-      "url": "https://github.com/timanovsky/subdir-heroku-buildpack"
+      "url": "heroku-community/subdir"
     },
     {
       "url": "heroku/nodejs"
