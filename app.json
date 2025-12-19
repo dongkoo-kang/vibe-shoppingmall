@@ -1,0 +1,22 @@
+{
+  "name": "Shopping Mall Demo",
+  "description": "A shopping mall demo application",
+  "repository": "https://github.com/dongkoo-kang/vibe-shoppingmall",
+  "keywords": [
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/timanovsky/subdir-heroku-buildpack"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "PROJECT_PATH": "server"
+  }
+}
+
