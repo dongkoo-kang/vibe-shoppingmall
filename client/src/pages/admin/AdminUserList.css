@@ -1,0 +1,121 @@
+.admin-user-list {
+  min-height: calc(100vh - 80px);
+  padding: 2rem 1.5rem;
+  background-color: #faf7f0;
+  padding-top: 100px;
+}
+
+.admin-user-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  padding: 2rem 2.5rem;
+}
+
+.admin-user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.admin-user-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #5c4033;
+  margin: 0;
+}
+
+.admin-user-search {
+  margin-bottom: 1rem;
+}
+
+.admin-user-search-input-wrapper {
+  position: relative;
+  max-width: 280px;
+}
+
+.admin-user-search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.admin-user-search-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2rem;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.admin-user-search-input:focus {
+  border-color: #5c4033;
+  box-shadow: 0 0 0 2px rgba(92, 64, 51, 0.1);
+}
+
+.admin-user-error {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #ffebee;
+  color: #c62828;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.admin-user-loading {
+  text-align: center;
+  padding: 2rem 0;
+  color: #666;
+}
+
+.admin-user-table-wrapper {
+  overflow-x: auto;
+}
+
+.admin-user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-user-table thead {
+  background-color: #f5f5f5;
+}
+
+.admin-user-table th,
+.admin-user-table td {
+  padding: 0.75rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+}
+
+.admin-user-table th {
+  font-weight: 600;
+  color: #5c4033;
+}
+
+.admin-user-empty {
+  text-align: center;
+  color: #999;
+  padding: 2rem 0 !important;
+}
+
+@media (max-width: 768px) {
+  .admin-user-list {
+    padding: 1rem 1rem;
+    padding-top: 100px;
+  }
+
+  .admin-user-container {
+    padding: 1.5rem;
+  }
+}
+
+

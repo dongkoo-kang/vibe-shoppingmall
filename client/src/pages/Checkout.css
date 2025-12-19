@@ -1,0 +1,518 @@
+.checkout-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  background-color: #f5f5f0;
+  min-height: calc(100vh - 200px);
+}
+
+.checkout-container {
+  background-color: #fdfaf5;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.checkout-header-top {
+  margin-bottom: 2rem;
+}
+
+.btn-back-to-cart {
+  background: none;
+  border: none;
+  color: #8b4513;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+}
+
+.btn-back-to-cart:hover {
+  color: #654321;
+}
+
+.checkout-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3b2b20;
+  margin: 0;
+}
+
+.checkout-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.checkout-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-section {
+  background-color: #faf8f3;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e8e5df;
+}
+
+.form-section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #3b2b20;
+  margin: 0 0 1.5rem 0;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #5a4a3a;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d4c5b8;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #3b2b20;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #8b4513;
+  box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.1);
+}
+
+.form-group input:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  color: #999;
+}
+
+/* 주소 입력 필드 스타일 */
+.address-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.postal-code {
+  flex: 0 0 150px;
+  background-color: #f9f9f9;
+  cursor: not-allowed;
+}
+
+.postcode-search-btn {
+  flex: 1;
+  padding: 0.75rem;
+  background-color: #8b4513;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.postcode-search-btn:hover:not(:disabled) {
+  background-color: #654321;
+}
+
+.postcode-search-btn:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.75rem;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.payment-option:hover {
+  background-color: #f0ede6;
+}
+
+.payment-option input[type="radio"] {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+.payment-option span {
+  font-size: 1rem;
+  color: #3b2b20;
+}
+
+.btn-payment {
+  width: 100%;
+  padding: 1rem;
+  background-color: #8b4513;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-payment:hover:not(:disabled) {
+  background-color: #654321;
+}
+
+.btn-payment:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #3b2b20;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+.address-option-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #3b2b20;
+}
+
+.radio-option input[type="radio"] {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+.radio-option:hover {
+  color: #8b4513;
+}
+
+.checkout-order-summary {
+  background-color: #faf8f3;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e8e5df;
+  position: sticky;
+  top: 2rem;
+}
+
+.order-summary-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #3b2b20;
+  margin: 0 0 1.5rem 0;
+}
+
+.summary-items {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e8e5df;
+}
+
+.summary-item {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.summary-item:last-child {
+  margin-bottom: 0;
+}
+
+.summary-item-image {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summary-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.summary-item-image .image-placeholder {
+  font-size: 1.5rem;
+  color: #999;
+}
+
+.summary-item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.summary-item-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.summary-item-name {
+  color: #5a4a3a;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  flex: 1;
+  min-width: 0;
+}
+
+.summary-item-price-inline {
+  color: #3b2b20;
+  font-weight: 500;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.summary-item-price-inline .original-price-inline {
+  font-size: 0.85rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.summary-item-price-inline .discounted-price-inline {
+  color: #3b2b20;
+  font-weight: 600;
+}
+
+.summary-item-discount-info {
+  text-align: right;
+  margin-top: 0.25rem;
+}
+
+.summary-item-discount-info .discount-badge-inline {
+  font-size: 0.7rem;
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+.summary-item-price {
+  color: #3b2b20;
+  font-weight: 500;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.summary-item-price .price-with-discount {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: flex-end;
+}
+
+.summary-item-price .original-price {
+  font-size: 0.8rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.summary-item-price .discounted-price {
+  font-size: 0.95rem;
+  color: #3b2b20;
+  font-weight: 600;
+}
+
+.summary-item-price .discount-badge {
+  font-size: 0.7rem;
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+.summary-details {
+  margin-bottom: 1.5rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  color: #5a4a3a;
+}
+
+.summary-row:last-child {
+  margin-bottom: 0;
+}
+
+.summary-row.total-row {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #3b2b20;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e8e5df;
+  margin-top: 0.75rem;
+}
+
+.total-amount {
+  font-size: 1.3rem;
+  color: #8b4513;
+}
+
+.btn-complete-order {
+  width: 100%;
+  padding: 1.25rem;
+  background-color: #8b4513;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-complete-order:hover:not(:disabled) {
+  background-color: #654321;
+}
+
+.btn-complete-order:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.order-agreement-text {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #999;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.loading-state,
+.error-state {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.1rem;
+  color: #5a4a3a;
+}
+
+.error-state {
+  color: #d32f2f;
+}
+
+/* 우편번호 레이어 스타일 */
+.postcode-layer-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.postcode-layer-content {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 600px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.postcode-layer-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  color: #666;
+  cursor: pointer;
+  z-index: 1001;
+  line-height: 1;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.postcode-layer-close:hover {
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 968px) {
+  .checkout-content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-order-summary {
+    position: static;
+  }
+}
+

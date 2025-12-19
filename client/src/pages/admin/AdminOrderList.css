@@ -1,0 +1,360 @@
+.admin-order-list-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  background-color: #f5f5f0;
+  min-height: calc(100vh - 200px);
+}
+
+.admin-order-list-container {
+  background-color: #fdfaf5;
+  border-radius: 16px;
+  padding: 2rem 2.5rem 3rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.admin-order-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.admin-order-list-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #3b2b20;
+  margin: 0;
+}
+
+.back-to-dashboard-btn {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: #8b4513;
+  border: 1px solid #8b4513;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.back-to-dashboard-btn:hover {
+  background-color: #8b4513;
+  color: #fff;
+}
+
+/* 검색 바 */
+.admin-order-search-section {
+  margin-bottom: 1.5rem;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  font-size: 1.1rem;
+  color: #888;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  border: 1px solid #d4c4b0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #3b2b20;
+  background-color: #fff;
+  transition: all 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #8b4513;
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+/* 상태 필터 버튼 */
+.admin-order-filters {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e8e5df;
+  overflow-x: auto;
+}
+
+.admin-filter-btn {
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #d4c4b0;
+  background-color: #fff;
+  color: #5a4a3a;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.admin-filter-btn:hover {
+  background-color: #f5ebe1;
+  border-color: #8b4513;
+}
+
+.admin-filter-btn.active {
+  background-color: #8b4513;
+  color: #fff;
+  border-color: #8b4513;
+}
+
+/* 상태별 필터 버튼 색상 */
+.admin-filter-btn.status-paid.active {
+  background-color: #4a90e2;
+  border-color: #4a90e2;
+}
+
+.admin-filter-btn.status-preparing.active {
+  background-color: #f5a623;
+  border-color: #f5a623;
+}
+
+.admin-filter-btn.status-shipping.active {
+  background-color: #9013fe;
+  border-color: #9013fe;
+}
+
+.admin-filter-btn.status-delivered.active {
+  background-color: #50c878;
+  border-color: #50c878;
+}
+
+.admin-filter-btn.status-cancelled.active {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+/* 주문 테이블 */
+.admin-orders-table-container {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+.admin-orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.admin-orders-table thead {
+  background-color: #f0ebe2;
+}
+
+.admin-orders-table th {
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #5a4a3a;
+  border-bottom: 2px solid #e8e5df;
+}
+
+.admin-orders-table th:nth-child(6) {
+  padding-left: 3rem;
+}
+
+.admin-orders-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e8e5df;
+  font-size: 0.9rem;
+  color: #3b2b20;
+}
+
+.admin-orders-table tbody tr:hover {
+  background-color: #faf8f3;
+}
+
+.admin-orders-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.order-number {
+  font-weight: 500;
+  color: #8b4513;
+}
+
+.order-date {
+  color: #666;
+}
+
+.customer-name {
+  font-weight: 500;
+}
+
+.order-amount {
+  font-weight: 600;
+  color: #3b2b20;
+}
+
+.product-count {
+  color: #666;
+}
+
+.order-status {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  min-width: 70px;
+  text-align: center;
+  margin-left: 0.5rem;
+}
+
+.order-status.status-paid {
+  background-color: #e8f2ff;
+  color: #4a90e2;
+}
+
+.order-status.status-preparing {
+  background-color: #fff8e8;
+  color: #f5a623;
+}
+
+.order-status.status-shipping {
+  background-color: #f3e5ff;
+  color: #9013fe;
+}
+
+.order-status.status-delivered {
+  background-color: #e8f8ed;
+  color: #50c878;
+}
+
+.order-status.status-cancelled {
+  background-color: #ffe8e6;
+  color: #e74c3c;
+}
+
+.order-status.status-refunded {
+  background-color: #f0f0f0;
+  color: #95a5a6;
+}
+
+.view-order-btn {
+  padding: 0.4rem 0.8rem;
+  background-color: #8b4513;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.view-order-btn:hover {
+  background-color: #6f3510;
+}
+
+/* 페이지네이션 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.pagination-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d4c4b0;
+  background-color: #fff;
+  color: #5a4a3a;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 40px;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #f5ebe1;
+  border-color: #8b4513;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-btn.active {
+  background-color: #8b4513;
+  color: #fff;
+  border-color: #8b4513;
+}
+
+.loading-message,
+.error-message,
+.empty-message {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 1rem;
+  color: #5a4a3a;
+}
+
+.error-message {
+  color: #d32f2f;
+}
+
+.empty-message p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .admin-order-list-container {
+    padding: 1.5rem;
+  }
+
+  .admin-order-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .admin-order-filters {
+    gap: 0.4rem;
+  }
+
+  .admin-filter-btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .admin-orders-table {
+    font-size: 0.85rem;
+  }
+
+  .admin-orders-table th,
+  .admin-orders-table td {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
