@@ -126,30 +126,20 @@ function Login() {
         
         // 비밀번호 초기화 후 로그인한 경우 비밀번호 변경 페이지로 이동
         // (메모 필드에 비밀번호 초기화 관련 메시지가 있는지 확인)
-        // 단, 로그아웃 후 다시 로그인한 경우는 제외
         const userData = response.data;
         const hasPasswordResetMemo = userData.memo && (
           userData.memo.includes('비밀번호가 초기화되었습니다') || 
           userData.memo.includes('비밀번호 입력 5회 실패')
         );
         
-        // 이전 세션에서 비밀번호 변경이 필요한 상태였는지 확인
-        const previousSession = localStorage.getItem('needsPasswordChange');
-        
-        // 비밀번호 변경이 필요한 경우:
-        // - hasPasswordResetMemo가 true이고 previousSession이 'true'인 경우에만 비밀번호 변경 페이지로 이동
-        // - 로그아웃 후 다시 로그인한 경우 (previousSession이 없음) -> 비밀번호 변경 페이지로 이동하지 않음
-        if (hasPasswordResetMemo && previousSession === 'true') {
-          // 이전 세션에서도 필요했던 경우 비밀번호 변경 페이지로 이동
+        // 비밀번호 변경이 필요한 경우 바로 비밀번호 변경 페이지로 이동
+        if (hasPasswordResetMemo) {
+          // 플래그 설정 (비밀번호 변경 완료 전까지 유지)
+          localStorage.setItem('needsPasswordChange', 'true');
           navigate('/change-password');
         } else {
-          // 비밀번호 변경이 필요한 경우 플래그 설정 (다음 로그인 시 사용)
-          if (hasPasswordResetMemo && !previousSession) {
-            localStorage.setItem('needsPasswordChange', 'true');
-          } else if (!hasPasswordResetMemo) {
-            // 비밀번호 변경이 필요하지 않은 경우 플래그 제거
-            localStorage.removeItem('needsPasswordChange');
-          }
+          // 비밀번호 변경이 필요하지 않은 경우 플래그 제거
+          localStorage.removeItem('needsPasswordChange');
           // 일반 로그인 성공 시 홈으로 이동
           navigate('/');
         }
